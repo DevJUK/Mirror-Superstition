@@ -8,7 +8,7 @@ public class UpdateText : MonoBehaviour
 
 
 	public ScoreTimerScrpt ScoreScript;
-	public Text T
+	public Text T;
 
 	private void Start()
 	{
@@ -16,6 +16,21 @@ public class UpdateText : MonoBehaviour
 		T = GetComponent<Text>();
 	}
 
+	public void Update()
+	{
+		if (gameObject.name == "ScoreTxtOne")
+		{
+			UpdateP1Text();
+		}
+		else if (gameObject.name == "ScoreTxtTwo")
+		{
+			UpdateP2Text();
+		}
+		else if (gameObject.name == "ScoreTxtThree")
+		{
+			UpdateP3Text();
+		}
+	}
 
 	public void UpdateP1Text()
 	{

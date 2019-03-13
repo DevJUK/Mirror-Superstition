@@ -9,13 +9,18 @@ public class MirrorScrpt : MonoBehaviour
     public AudioManager AudioManager;
 	private bool IsCoRunning;
 
-    // Update is called once per frame
-    void Update()
+
+	private void Start()
+	{
+		AudioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
+	}
+
+	// Update is called once per frame
+	void Update()
     {
         if (Broken)
         {
-            AudioManager.PlayClip(2, 1, 1);
-            foreach (Renderer G in GetComponentsInChildren<Renderer>())
+			foreach (Renderer G in GetComponentsInChildren<Renderer>())
 			{
 				if (G.gameObject.name == "Mirror")
 				{
@@ -34,7 +39,8 @@ public class MirrorScrpt : MonoBehaviour
 	public IEnumerator RemoveMirror(GameObject Mirror)
 	{
 		IsCoRunning = true;
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(.5f);
+		AudioManager.PlayClip(2, 1, 1);
 		Destroy(Mirror, .1f);
 	}
 }

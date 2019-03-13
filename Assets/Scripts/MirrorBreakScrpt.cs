@@ -10,7 +10,13 @@ public class MirrorBreakScrpt : MonoBehaviour
 	public ScoreTimerScrpt ScoreScript;
 
 
-    void Update()
+	private void Start()
+	{
+		AudioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
+		ScoreScript = FindObjectOfType<ScoreTimerScrpt>().GetComponent<ScoreTimerScrpt>();
+	}
+
+	void Update()
     {
         RaycastHit Hit;
         if (Physics.Raycast(transform.position,transform.forward, out Hit, Range))
