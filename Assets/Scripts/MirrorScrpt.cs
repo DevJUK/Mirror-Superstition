@@ -5,18 +5,34 @@ using UnityEngine;
 public class MirrorScrpt : MonoBehaviour
 {
     public bool Broken;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public Material BrokenText;
+	private bool IsCoRunning;
 
     // Update is called once per frame
     void Update()
     {
         if (Broken)
         {
-            // Break mirror
+			foreach (Renderer G in GetComponentsInChildren<Renderer>())
+			{
+				if (G.gameObject.name == "Mirror")
+				{
+					G.material = BrokenText;
+
+					if (!IsCoRunning)
+					{
+						StartCoroutine(RemoveMirror(G.gameObject.transform.parent.gameObject));
+					}
+				}
+			}
         }
     }
+
+
+	public IEnumerator RemoveMirror(GameObject Mirror)
+	{
+		IsCoRunning = true;
+		yield return new WaitForSeconds(1);
+		Destroy(Mirror, .1f);
+	}
 }

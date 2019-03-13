@@ -19,18 +19,37 @@ public class MirrorBreakScrpt : MonoBehaviour
         RaycastHit Hit;
         if (Physics.Raycast(transform.position,transform.forward, out Hit, Range))
         {
-            if (Input.GetButtonDown("Interact"))
-            {
+
+			if (Input.GetButtonDown("P1Attack") && gameObject.tag == "P1")
+			{
 				GetComponentInChildren<Animator>().SetTrigger("Punch");
 				Hit.transform.GetComponent<MirrorScrpt>().Broken = true;
-            }
-        }
+			}
+			else if (Input.GetButtonDown("P2Attack") && gameObject.tag == "P2")
+			{
+				GetComponentInChildren<Animator>().SetTrigger("Punch");
+				Hit.transform.GetComponent<MirrorScrpt>().Broken = true;
+			}
+			else if (Input.GetButtonDown("P3Attack") && gameObject.tag == "P3")
+			{
+				GetComponentInChildren<Animator>().SetTrigger("Punch");
+				Hit.transform.GetComponent<MirrorScrpt>().Broken = true;
+			}
+		}
         else
         {
-            if (Input.GetButtonDown("Interact"))
-            {
+			if (Input.GetButtonDown("P1Attack") && gameObject.tag == "P1")
+			{
 				GetComponentInChildren<Animator>().SetTrigger("Punch");
 			}
-        }
+			else if (Input.GetButtonDown("P2Attack") && gameObject.tag == "P2")
+			{
+				GetComponentInChildren<Animator>().SetTrigger("Punch");
+			}
+			else if (Input.GetButtonDown("P3Attack") && gameObject.tag == "P3")
+			{
+				GetComponentInChildren<Animator>().SetTrigger("Punch");
+			}
+		}
     }
 }
