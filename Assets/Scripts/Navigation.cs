@@ -16,4 +16,9 @@ public void ChangeToMenu()
         SceneManager.LoadScene(0);
     }
 
+    public void ChangeToWinner()
+    {
+        SceneManager.LoadScene(2);
+    }
+
 }
