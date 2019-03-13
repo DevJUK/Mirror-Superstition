@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreTimerScrpt : MonoBehaviour
 {
@@ -35,7 +36,24 @@ public class ScoreTimerScrpt : MonoBehaviour
         else if (Timer <= TimerTarget && TimerRunning)
         {
             TimerRunning = false;
-        }
+			
+			if ((P1Score > P2Score) && (P1Score > P3Score))
+			{
+				GameObject.Find("Winner").GetComponent<WinnerHolder>().BlueWin = true;
+				SceneManager.LoadSceneAsync("Winner");
+			}
+			else if ((P2Score > P1Score) && (P2Score > P3Score))
+			{
+				GameObject.Find("Winner").GetComponent<WinnerHolder>().RedWin = true;
+				SceneManager.LoadSceneAsync("Winner");
+			}
+			else if ((P3Score > P1Score) && (P3Score > P2Score))
+			{
+				GameObject.Find("Winner").GetComponent<WinnerHolder>().GreenWin = true;
+				SceneManager.LoadSceneAsync("Winner");
+			}
+		}
+
         TimerTxt.text = Timer.ToString("#.00");
     }
 

@@ -11,10 +11,17 @@ public class WinnerScript : MonoBehaviour
 
     public GameObject Text;
     public Text WinnerTxt;
+
+	public WinnerHolder WinHold;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+		WinHold = GameObject.Find("Winner").GetComponent<WinnerHolder>();
+
+		BlueWin = WinHold.BlueWin;
+		RedWin = WinHold.RedWin;
+		GreenWin = WinHold.GreenWin;	
     }
 
     // Update is called once per frame
