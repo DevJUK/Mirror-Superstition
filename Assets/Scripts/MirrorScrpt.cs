@@ -6,6 +6,7 @@ public class MirrorScrpt : MonoBehaviour
 {
     public bool Broken;
 	public Material BrokenText;
+    public AudioManager AudioManager;
 	private bool IsCoRunning;
 
     // Update is called once per frame
@@ -13,7 +14,8 @@ public class MirrorScrpt : MonoBehaviour
     {
         if (Broken)
         {
-			foreach (Renderer G in GetComponentsInChildren<Renderer>())
+            AudioManager.PlayClip(2, 1, 1);
+            foreach (Renderer G in GetComponentsInChildren<Renderer>())
 			{
 				if (G.gameObject.name == "Mirror")
 				{
