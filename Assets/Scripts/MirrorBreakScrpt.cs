@@ -7,14 +7,9 @@ public class MirrorBreakScrpt : MonoBehaviour
     public float Range;
     public MirrorScrpt MirrorScrpt;
     public AudioManager AudioManager;
+	public ScoreTimerScrpt ScoreScript;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         RaycastHit Hit;
@@ -26,19 +21,22 @@ public class MirrorBreakScrpt : MonoBehaviour
 				GetComponentInChildren<Animator>().SetTrigger("Punch");
 				Hit.transform.GetComponent<MirrorScrpt>().Broken = true;
                 AudioManager.PlayClip(0,1,1);
+				ScoreScript.P1Score += 1;
 			}
 			else if (Input.GetButtonDown("P2Attack") && gameObject.tag == "P2")
 			{
 				GetComponentInChildren<Animator>().SetTrigger("Punch");
 				Hit.transform.GetComponent<MirrorScrpt>().Broken = true;
                 AudioManager.PlayClip(0, 1, 1);
-            }
+				ScoreScript.P2Score += 1;
+			}
 			else if (Input.GetButtonDown("P3Attack") && gameObject.tag == "P3")
 			{
 				GetComponentInChildren<Animator>().SetTrigger("Punch");
 				Hit.transform.GetComponent<MirrorScrpt>().Broken = true;
                 AudioManager.PlayClip(0, 1, 1);
-            }
+				ScoreScript.P3Score += 1;
+			}
 		}
         else
         {

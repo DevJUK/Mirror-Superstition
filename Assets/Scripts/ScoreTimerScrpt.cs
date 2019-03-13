@@ -5,23 +5,28 @@ using UnityEngine.UI;
 
 public class ScoreTimerScrpt : MonoBehaviour
 {
-    public int Score;
-    public int Multiplyer;
+    public int P1Score;
+	public int P2Score;
+	public int P3Score;
 
-    public float Timer;
+	public float Timer;
     public float TimerTarget;
     public bool TimerRunning;
 
     public GameObject TimerTxtBox;
     public Text TimerTxt;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+
+
+	private void Start()
+	{
+		P1Score = 0;
+		P2Score = 0;
+		P3Score = 0;
+	}
+
+	// Update is called once per frame
+	void Update()
     {
         if (Timer > TimerTarget && TimerRunning)
         {

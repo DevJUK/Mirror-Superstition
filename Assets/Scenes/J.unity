@@ -319,6 +319,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Range: 4
   MirrorScrpt: {fileID: 0}
+  AudioManager: {fileID: 0}
+  ScoreScript: {fileID: 0}
 --- !u!1 &76973383
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +732,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Range: 4
   MirrorScrpt: {fileID: 0}
+  AudioManager: {fileID: 0}
+  ScoreScript: {fileID: 0}
 --- !u!114 &688469541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -987,6 +991,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Range: 4
   MirrorScrpt: {fileID: 0}
+  AudioManager: {fileID: 0}
+  ScoreScript: {fileID: 0}
 --- !u!114 &770549807
 MonoBehaviour:
   m_ObjectHideFlags: 0
