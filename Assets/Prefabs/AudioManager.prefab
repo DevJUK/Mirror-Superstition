@@ -44,5 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sound_Prefab: {fileID: 0}
-  Sound_Names: []
-  Sound_Clips: []
+  Sound_Names:
+  - Punch
+  - Miss
+  - Smash
+  Sound_Clips:
+  - {fileID: 8300000, guid: d1d3f3827f4cdb544958f45410fee889, type: 3}
+  - {fileID: 8300000, guid: cc2fd587159a04c4fa3e297e542a5016, type: 3}
+  - {fileID: 8300000, guid: 583494dfd41f3ad40b6b5d84b3a4f49c, type: 3}
