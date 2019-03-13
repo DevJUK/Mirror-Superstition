@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+	public float Speed;
+
+	private void FixedUpdate()
+	{
+		if (Input.GetKey(KeyCode.W))
+		{
+			GetComponent<Rigidbody>().velocity = transform.forward * Speed;
+		}
+		if (Input.GetKey(KeyCode.S))
+		{
+			GetComponent<Rigidbody>().velocity = -transform.forward * Speed;
+		}
+
+		if (Input.GetKey(KeyCode.A))
+		{
+
+		}
+	}
+
 }
