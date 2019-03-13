@@ -21,16 +21,16 @@ public class MirrorBreakScrpt : MonoBehaviour
         {
             if (Input.GetButtonDown("Interact"))
             {
-                // play punch animation
-                Hit.transform.GetComponent<MirrorScrpt>().Broken = true;
+				GetComponentInChildren<Animator>().SetTrigger("Punch");
+				Hit.transform.GetComponent<MirrorScrpt>().Broken = true;
             }
         }
         else
         {
             if (Input.GetButtonDown("Interact"))
             {
-               // play punch animation
-            }
+				GetComponentInChildren<Animator>().SetTrigger("Punch");
+			}
         }
     }
 }
