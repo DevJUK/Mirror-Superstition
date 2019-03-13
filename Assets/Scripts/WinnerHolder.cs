@@ -10,6 +10,11 @@ public class WinnerHolder : MonoBehaviour
 
 	private void Awake()
 	{
+		if (FindObjectsOfType<WinnerHolder>().Length > 1)
+		{
+			Destroy(FindObjectsOfType<WinnerHolder>()[1].gameObject, .1f);
+		}
+
 		DontDestroyOnLoad(this);
 	}
 }

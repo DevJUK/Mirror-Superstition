@@ -16,7 +16,7 @@ public class ScoreTimerScrpt : MonoBehaviour
 
     public GameObject TimerTxtBox;
     public Text TimerTxt;
-
+	public WinnerHolder Hold;
 
 
 	private void Start()
@@ -24,6 +24,10 @@ public class ScoreTimerScrpt : MonoBehaviour
 		P1Score = 0;
 		P2Score = 0;
 		P3Score = 0;
+		TimerRunning = true;
+		Hold.BlueWin = false;
+		Hold.RedWin = false;
+		Hold.GreenWin = false;
 	}
 
 	// Update is called once per frame
